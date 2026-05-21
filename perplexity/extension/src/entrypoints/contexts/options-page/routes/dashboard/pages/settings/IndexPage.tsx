@@ -2,6 +2,7 @@ import CometSection from "@/entrypoints/contexts/options-page/routes/dashboard/p
 import DataMigrationSection from "@/entrypoints/contexts/options-page/routes/dashboard/pages/settings/sections/DataMigrationSection";
 import DevToolsSection from "@/entrypoints/contexts/options-page/routes/dashboard/pages/settings/sections/DevToolsSection";
 import GeneralSection from "@/entrypoints/contexts/options-page/routes/dashboard/pages/settings/sections/GeneralSection";
+import PplxAccountBackupSection from "@/entrypoints/contexts/options-page/routes/dashboard/pages/settings/sections/PplxAccountBackupSection";
 import TroubleshootingSection from "@/entrypoints/contexts/options-page/routes/dashboard/pages/settings/sections/TroubleshootingSection";
 import { isCometBrowserSync } from "@/entrypoints/utils/comet";
 
@@ -11,6 +12,7 @@ export function IndexPage() {
       {isCometBrowserSync() && <CometSection />}
       <GeneralSection />
       <DataMigrationSection />
+      <PplxAccountBackupSection />
       <TroubleshootingSection />
       <DevToolsSection />
     </div>
