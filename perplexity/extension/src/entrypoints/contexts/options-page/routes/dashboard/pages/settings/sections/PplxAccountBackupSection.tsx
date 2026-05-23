@@ -7,7 +7,7 @@ export default function PplxAccountBackupSection() {
     <SettingsSection title="Perplexity Account Backup">
       <SettingsItem
         title="Backup & Restore"
-        description="Export and import your Perplexity Spaces and Threads. Note that thread restoration is limited."
+        description="Backup and restore your Perplexity data. Choose which items to export (Spaces, Threads, Artifacts, Computer Tasks). Currently only Space restoration is supported on import."
       >
         <BackupRestoreUI />
       </SettingsItem>
