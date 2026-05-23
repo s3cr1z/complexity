@@ -5,8 +5,9 @@ function AccountBackupPluginSettingsUi() {
   return (
     <div className="x:flex x:max-w-lg x:flex-col x:gap-4">
       <p className="x:text-sm x:text-muted-foreground">
-        Backup your Perplexity Spaces and Threads. Note that thread restoration
-        is limited to metadata and basic recovery where supported by the API.
+        Backup and restore your Perplexity data. Choose which items to export
+        (Spaces, Threads, Artifacts, Computer Tasks). Currently only Space
+        restoration is supported on import.
       </p>
       <BackupRestoreUI />
     </div>
