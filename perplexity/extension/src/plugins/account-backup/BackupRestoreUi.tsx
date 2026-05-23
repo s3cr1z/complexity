@@ -87,13 +87,24 @@ export default function BackupRestoreUI() {
         (msg) => setStatus(msg),
       );
 
-      await downloadFile({
+      setStatus("Saving file...");
+      // Bypass `showSaveFilePicker` because the long-running fetch above
+      // consumes the transient user activation it requires. The anchor-based
+      // download writes straight to the browser's default Downloads folder.
+      const result = await downloadFile({
         data: JSON.stringify(data, null, 2),
         filename: `pplx-backup-${new Date().toISOString().split("T")[0]}.json`,
+        skipFilePicker: true,
       });
 
+      if (result === "cancelled") {
+        setStatus("");
+        setError("Export cancelled: no file was saved.");
+        return;
+      }
+
       setSuccess(true);
-      setStatus("Export complete!");
+      setStatus("Export complete! Check your Downloads folder.");
     } catch (err) {
       console.error(err);
       setStatus("");
